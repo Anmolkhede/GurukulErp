@@ -34,13 +34,7 @@ tailwind.config = {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+   
 
 
     <title>Admin Dashboard Panel</title>
@@ -52,145 +46,78 @@ tailwind.config = {
 
 
 
-<body class="min-h-screen p-2 bg-slate-200 font-sans  ">
+<body class="min-h-screen p-2  bg-slate-200  font-sans overflow-x-hidden  ">
 
-<img src="d.png" class="absolute top-0 left-96 hidden lg:block opacity-10">
+
 
 
     
-<div class="flex justify-between ">
 
-<div>
 
-      <div class="sidebar z-[11000] fixed top-0 bottom-0 lg:left-0 left-[-300px]  scroll-smooth lg:overflow-y-hidden       sm:overflow-y-hidden     sm:hover:overflow-y-auto  dj:overflow-y-hidden     dj:hover:overflow-y-auto hover:overflow-y-auto duration-1000
-        p-2 w-[300px]  text-center   h-screen  lg:bg-sky-900  border-r-2 border-sky-900  dj:bg-blue-400">
-        <div class="text-black-100 text-xl">
-          <div class="p-2.5 mt-1 flex items-center rounded-md ">
-            <img src="ge.png"class="rounded-full w-10 font-normal  hidden sm:block dj:block  xl:block dj:flex dj:justify-center" alt="">
-            <h1 class="  ml-3 text-xl  text-white font-medium">Gurukul ERP</h1>
-            <i class="bi bi-x ml-20 cursor-pointer lg:hidden text-black " onclick="Openbar()"></i>
-          </div>
-          <hr class="my-2 text-white-600">
-    
-          <div>
-            <div class="p-2.5 mt-3 flex lg:bg-white dj:bg-white border  items-center rounded-md 
-            px-4 duration-300 cursor-pointer  ">
-              <i class="bi bi-search text-sm " ></i>
-              <input class="text-[15px] ml-4 w-full text-black  lg:bg-white  dj:bg-white focus:outline-none" placeholder="Serach" />
-            </div>
-    
-            <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
-                <i class="uil uil-apps text-white "></i>
-             <a href="index.html"><span class="text-[15px] ml-4 text-white    text-lg">Dashboard</span></a> 
-            </div>
-            <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
-                <i class="uil uil-plus text-white "></i>
-              <span class="text-[15px] ml-4 text-white   text-lg">Admisstion</span>
-            </div>
-            <hr class="my-4 text-gray-600">
-            <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
-              <i class="uil uil-bill text-white "></i>
-            <div class="flex justify-between w-full text-white  items-center" onclick="dropDown()">
-              <span class="text-[15px] ml-4 text-lg text-white "> Fees & Payments</span>
-              <span class="text-sm rotate-180 " id="arrow">
-                <i class="bi bi-chevron-down"></i>
+   
+  <div class="lg:bg-gray-800  border-b-2 border-gray-500  dj:bg-transparent lg:fixed  w-screen top-0 lg:h-[65px] dj:h-[50px] z-[10000] ">
+    <div class="flex lg:justify-between border-gray-50 mt-2">
+        <div>
+            <span class=" text-black text-4xl dj:block   lg:hidden cursor-pointer" id="alertbutton" onclick="Openbar()">
+                <i class="bi bi-filter-left px-2 lg:bg-blue-600/15 dj:bg-blue-600  "></i>
               </span>
-            </div>
-          </div>
-          <div class=" leading-7 text-left text-sm font-thin mt-2 w-4/5 mx-auto" id="submenu">
-            <a href="expe.html"><h1 class="cursor-pointer p-2  hover:bg-blue-600 text-white  text-lg rounded-md mt-1"><i class="uil uil-plus-circle mr-4 text-white "></i>Add Particular Fee </h1></a>
-            <h1 class="cursor-pointer p-2  hover:bg-blue-600 text-white    text-lg rounded-md mt-1"><i class="uil uil-clipboard-notes mr-4 text-white "></i>Particulars List</h1>
-            <h1 class="cursor-pointer p-2  hover:bg-blue-600 text-white  text-lg rounded-md mt-1"><i class="uil uil-book-reader mr-4 text-white "></i>Student Fee  </h1>
-            <h1 class="cursor-pointer p-2  hover:bg-blue-600 text-white  text-lg rounded-md mt-1"><i class="uil uil-book-medical mr-4 text-white "></i>Submit Fee   </h1>
-            <h1 class="cursor-pointer p-2  hover:bg-blue-600 text-white  text-lg rounded-md mt-1"><i class="uil uil-archive mr-4 text-white  "></i>Payment History   </h1>
-          </div>
-            <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
-                <i class="uil uil-user text-white "></i>
-              <span class="text-[15px] ml-4 text-white   text-lg">Student</span>
-            </div>
-            <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
-                <i class="uil uil-bell text-white "></i>
-                <span class="text-[15px] ml-4 text-white   text-lg">Notification</span>
-              </div>
-              <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
-                <i class="uil uil-clipboard-alt text-white "></i>
-                <span class="text-[15px] ml-4 text-white   text-lg">Time-table</span>
-              </div>
-    
-          
-            <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
-                <i class="uil uil-setting text-white  "></i>
-              <span class="text-[15px] ml-4 text-white  text-lg">Setting</span>
-            </div>
-            </div>
-              
-    
-          </div>
-
-          
         </div>
-      </div>
-    </div>
-
-    
-<div class="lg:bg-white/20 dj:bg-transparent lg:fixed  w-screen top-0 lg:h-[65px] dj:h-[50px] z-[10000] lg:shadow">
-<div class="flex lg:justify-between border-gray-50 mt-2">
-    <div>
-        <span class=" text-black text-4xl dj:block   lg:hidden cursor-pointer" onclick="Openbar()">
-            <i class="bi bi-filter-left px-2 lg:bg-blue-600/15 dj:bg-blue-600 rounded-md "></i>
-          </span>
-    </div>
-    <div class=" hidden lg:block top-3 lg:absolute right-[900px]">
-    <div class="  flex items-center rounded-md  ">
-      <i class="uil uil-chart  hidden  dj:block dj:left-0 dj:ml-5  lg:block px-2 py-1 bg-blue-600 text-white rounded-md"></i>
-      <h1 class="text-4xl   text-black 
-      dj:ml-5  text-black font-medium">Dashboard</h1>
-      
-  </div>
-    </div>
-   
-    <div class=" hidden lg:block  lg:absolute right-[800px]">
-      <div class="flex-shrink pr-2">
-        <div class="rounded-full p-3 text-center hover:bg-blue-500 bg-white/30 hidden w-[50px] lg:block"><i class="fa-solid fa-bars text-bold text-xl"></i></div>
-    </div>
-    </div>
-   
-    <div class="p-1.5 flex   bg-white/30 lg:w-96 hidden lg:mt-1 border border-black dj:block lg:block dj:w-3/4 dj:ml-3 items-center rounded-full lg:absolute dj:static lg:right-96
-    px-4 duration-300 cursor-pointer   dj:h-[40px] ">
-      <i class="bi bi-search text-sm hidden " ></i>
-      <input class="text-[15px]  text-black bg-white/5  focus:outline-none" placeholder="global search" />
-    </div>
-  
-      <div class="w-[200px] rounded hidden lg:block mt-1 lg:absolute right-[30px]">
-        <div class="sm:flex sm:items-center px-6 ">
-          <input type="checkbox" id="avatar" class="hidden  top-10">
-          <label for="avatar" class="relative cursor-pointer">
-            <i class="fas fa-user-circle text-4xl text-gray-800"></i>
-            <!-- Options dropdown -->
-            <div>
-            <div id="dropdown" class="absolute top-full overflow-auto left-0  bg-white/30 border border-gray-200 rounded shadow-md hidden">
-              <a href="user.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-                <i class="fas fa-user mr-2"></i> Profile
-              </a>
-              <a href="settings.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-                <i class="fas fa-cog mr-2"></i> Settings
-              </a>
-              <a href="logout.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-                <i class="fas fa-sign-out-alt mr-2"></i> Logout
-              </a>
-            </div>
-          </div>
-          </label>
-       </div>
-                       
-                       
-                     </div>
-                    <hr class="hidden dj:block  lg:my-10 dj:mt-20 lg:ml-96  text-gray-900">
-               </div>
+        <div class=" hidden lg:block top-3 lg:absolute lg:right-[1000px]">
+        <div class="  flex items-center rounded-md  ">
         
-              </div>
+          <h1 class="text-4xl   text-gray-300 
+          dj:ml-5  text-black sm:hidden lg:block font-serif font-medium">Gurukul Erp</h1>
+          
+      </div>
+        </div>
+       
+        <div class=" hidden lg:block  lg:absolute right-[900px]">
+          <div class="flex-shrink pr-2">
+            <div class=" p-2 text-center hover:bg-blue-500 bg-white/20 text-gray-300 hidden w-[50px] lg:block"><i class="fa-solid fa-bars text-bold text-xl"></i></div>
+        </div>
+        </div>
+       
+        <div class="p-1.5 flex  dj:bg-white/50 lg:bg-white/20 lg:w-[500px] hidden lg:mt-1   dj:block lg:block dj:w-1/2 dj:ml-10 items-center  lg:absolute dj:static lg:right-96
+        px-4 duration-300 cursor-pointer   dj:h-[40px] ">
+          <i class="bi bi-search text-sm hidden " ></i>
+          <input class="text-[15px]  text-black bg-white/0  focus:outline-none" placeholder="global search" />
+          <a href="index.html" class="absolute  dj:block dj:top-20 dj:right-10 lg:right-[-200px]  underline font-serif text-gray-800">Home</a>
     
-              
+        </div>
+     
+    
+    
+       
+          <div class="w-[200px] rounded  ">
+            <div class="sm:flex sm:items-center px-6 ">
+              <input type="checkbox" id="avatar" class="hidden  top-10">
+              <label for="avatar" class="relative cursor-pointer">
+                <i class="fas fa-user-circle text-4xl dj:text-gray-800 lg:text-gray-300"></i>
+                <!-- Options dropdown -->
+                <div>
+                <div id="dropdown" class="lg:absolute lg:top-full lg:overflow-auto lg:right-10 dj:absolute dj:right-20 bg-white/30 border border-gray-200 rounded shadow-md hidden">
+                  <a href="user.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                    <i class="fas fa-user mr-2"></i> Profile
+                  </a>
+                  <a href="settings.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                    <i class="fas fa-cog mr-2"></i> Setting
+                  </a>
+                  <a href="logout.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                    <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                  </a>
+                </div>
+              </div>
+              </label>
+           </div>
+                           
+                           
+                         </div>
+                     
+                   </div>
+            
+                  </div>
+        
+    
     
           </div>
         </div>
@@ -203,6 +130,27 @@ tailwind.config = {
 
 
 </div>
+<div class="hidden lg:block"><p class="text-xl mt-14 font-serif font-bold">Fees & Payements</p>
+  <div class="flex gap-10 border-b-2 font-serif mt-2 border-b-2 border-gray-300">
+    <div class=" border-b-2 border-blue-500"><a href="pfees.html">Add Particular Fees</a></div>
+    <div class=""><a href="flist.html">Particular List</a></div>
+    <div class=""><a href="sfees.html">Student Fee</a></div>
+  
+    <div class=" "><a href="su.html">Submit Fee</a></div>
+    <div class=" "><a href="hfee.html">Payment History</a></div>
+    <hr class="my-2 text-white">
+  
+  </div></div>
+  <div class="   dj:pt-5 mt-5 mx-auto absolute top-7 hidden font-serif lg:block left-[800px] flex justify-between  lg:ml-48 ">
+    <div class="hidden lg:block"> <p class="text-2xl font-medium"><i class="uil uil-building text-2xl font-medium"></i>Student</p>
+      <p class=" font-normal"><i class="uil uil-home"></i>   Dasboard >  Particular Fees</p></div>
+   <div class="flex mr-10">
+  
+  <div class="flex items-center justify-between">
+    
+  </div>
+  </div>
+  </div>
 <div class="flex dj:flex-col pt-10 mx-auto sm:flex-col md:flex-col lg:block hidden lg:flex-row lg:mt-10  dj:ml-10 dj:w-4/5 lg:w-screen">
     <div class="container mx-auto px-4 py-8">
         <div class="max-w-lg mx-auto bg-white shadow p-6 rounded-lg">
