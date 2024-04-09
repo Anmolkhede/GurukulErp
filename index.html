@@ -1,0 +1,1050 @@
+
+<!DOCTYPE html>
+<!-- Coding By Anmol Khede  -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    
+ 
+    <script src="https://cdn.tailwindcss.com"></script>
+   <script>
+/** @type {import('tailwindcss').Config} */
+
+tailwind.config = {
+  theme: {
+    screens: {
+      'sm': '640px',
+      // => @media (min-width: 640px) { ... }
+
+      'lg': '1024px',
+      // => @media (min-width: 1024px) { ... }
+     
+      'desktop': '1280px',
+      // => @media (min-width: 1280px) { ... }
+      'dj': '100px',
+    },
+  }
+}
+</script>
+    <!----===== Iconscout CSS ===== -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+ 
+  
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!----===== Iconscout CSS ===== -->
+
+    <title>Admin Dasboard </title>
+</head>
+<body class="min-h-screen p-2 bg-slate-950 font-sans dj:overflow-x-hidden lg:overflow-x-hidden "  id="dka">
+  <div class="fixed right-16  rounded-full bottom-16 bg-white/5 opacity-40 z-[25000]">
+  <a href="#dka" class="text-gray-200"><i class="uil uil-arrow-circle-up text-5xl "></i></a>
+  </div>
+<div class="flex justify-between ">
+<div>
+      <div class="sidebar z-[11000] fixed  top-0 bottom-0 lg:left-0 left-[-300px]  scroll-smooth lg:overflow-y-hidden       sm:overflow-y-hidden     sm:hover:overflow-y-auto  dj:overflow-y-hidden  overflow-x-hidden   dj:hover:overflow-y-auto hover:overflow-y-auto duration-1000
+        p-2 w-[300px]  text-center   h-screen  lg:bg-slate-900 shadow rounded-lg dj:bg-slate-900">
+        <div class="text-black-100 text-xl">
+         
+          <div class="p-2.5 mt-1 flex items-center rounded-md ">
+            <img src="ge.png"class="rounded-full w-12 font-normal  hidden sm:block dj:block  xl:block dj:flex dj:justify-center" alt="">
+            <h1 class="  ml-3 text-xl  text-gray-300 text-white font-sans font-medium">GURUKUL ERP</h1>
+            <i class="bi bi-x ml-20 cursor-pointer lg:hidden text-white " onclick="Openbar()"></i>
+          </div>
+          <hr class="my-2 text-white-600">
+    
+          <div>
+            <div class="p-2.5 mt-3 flex lg:bg-white/10 dj:bg-white/10 border  items-center 
+            px-4 duration-300 cursor-pointer  ">
+              <i class="bi bi-search text-sm text-white " ></i>
+              <input class="text-[15px] ml-4 w-full text-white  lg:bg-white/0  dj:bg-white/0 focus:outline-none" placeholder="Serach" />
+            </div>
+    
+            <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
+                <i class="uil uil-apps text-gray-300  "></i>
+              <span class="text-[15px] ml-4 text-gray-300     text-lg">Dashboard</span>
+            </div>
+            <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
+                <i class="uil uil-plus text-gray-300  "></i>
+              <a href="#admi"><span class="text-[15px] ml-4 text-gray-300    text-lg" >Admisstion</span></a>
+            </div>
+            <hr class="my-4 text-gray-600">
+            <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
+              <i class="uil uil-bill text-gray-300  "></i>
+            <div class="flex justify-between w-full text-gray-300   items-center" onclick="dropDown()">
+              <span class="text-[15px] ml-4 text-lg text-gray-300  "> Fees & Payments</span>
+              <span class="text-sm rotate-180 " id="arrow">
+                <i class="bi bi-chevron-down"></i>
+              </span>
+            </div> 
+          </div>
+          <div class=" leading-7 text-left text-sm font-thin mt-2 w-4/5 mx-auto" id="submenu">
+            <a href="pfees.html"><h1 class="cursor-pointer p-2 hover:-translate-y-1 hover:scale-110 font-medium duration-300 hover:bg-blue-600 text-gray-300   text-lg rounded-md mt-1"><i class="uil uil-plus-circle mr-4 text-gray-300  "></i>Add Particular Fee </h1></a>
+            <a href="flist.html"><h1 class="cursor-pointer p-2 hover:-translate-y-1 hover:scale-110 font-medium  duration-300 hover:bg-blue-600 text-gray-300   text-lg rounded-md mt-1"><i class="uil uil-clipboard-notes mr-4 text-gray-300  "></i>Particulars List</h1></a>
+            <a href="sfees.html"><h1 class="cursor-pointer p-2 hover:-translate-y-1 hover:scale-110 font-medium  duration-300 hover:bg-blue-600 text-gray-300  text-lg rounded-md mt-1"><i class="uil uil-book-reader mr-4 text-gray-300  "></i>Student Fee  </h1></a>
+            <a href="su.html"><h1 class="cursor-pointer p-2  hover:-translate-y-1 hover:scale-110 font-medium  duration-300 hover:bg-blue-600 text-gray-300   text-lg rounded-md mt-1"><i class="uil uil-book-medical mr-4 text-gray-300  "></i>Submit Fee   </h1></a>
+          <a href="hfee.html"><h1 class="cursor-pointer p-2  hover:-translate-y-1 hover:scale-110 font-medium  duration-300 hover:bg-blue-600 text-gray-300   text-lg rounded-md mt-1"><i class="uil uil-archive mr-4 text-gray-300   "></i>Payment History   </h1></a>
+          </div>
+            <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
+                <i class="uil uil-user text-gray-300  "></i>
+              <span class="text-[15px] ml-4 text-gray-300    text-lg">Student</span>
+            </div>
+            <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
+                <i class="uil uil-bell text-gray-300  "></i>
+                <a href="#notification"><span class="text-[15px] ml-4 text-gray-300    text-lg">Notification</span></a>
+              </div>
+              <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
+                <i class="uil uil-clipboard-alt text-gray-300  "></i>
+                <a href="#timetable"><span class="text-[15px] ml-4 text-gray-300    text-lg" >Time-table</span></a>
+              </div>
+            <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
+                <i class="uil uil-setting text-gray-300   "></i>
+              <span class="text-[15px] ml-4 text-gray-300   text-lg">Setting</span>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+<div class="bg-slate-200  lg:shadow dj:bg-transparent lg:fixed  w-screen top-0 lg:h-[65px] dj:h-[50px] z-[10000] " >
+<div class="flex lg:justify-between border-gray-50 mt-2">
+    <div>
+        <span class=" text-black text-4xl dj:block   lg:hidden cursor-pointer" onclick="Openbar()">
+            <i class="bi bi-filter-left px-2 lg:bg-blue-600/15 dj:bg-blue-600  "></i>
+          </span>
+        </div>
+    <div class=" hidden lg:block  lg:absolute     dj:h-[40px] right-[1080px]">
+      <div class="flex-shrink pr-2">
+        <div class="p-2 text-center hover:bg-blue-500 bg-white/20 text-gray-300 hidden w-[50px] lg:block"><i class="fa-solid fa-bars text-bold text-xl"></i></div>
+    </div>
+    </div>
+    <div class="p-1.5 flex   bg-white/20 lg:w-[600px] hidden lg:mt-1   dj:block lg:block dj:w-1/2 dj:ml-10 items-center  lg:absolute dj:static lg:right-96
+    px-4 duration-300 cursor-pointer   dj:h-[40px] ">
+      <i class="bi bi-search text-sm hidden " ></i>
+      <input class="text-[15px]  text-gray-300 bg-white/0  focus:outline-none" placeholder="global search" />
+
+    </div>
+ 
+   
+
+   
+      <div class="w-[200px] ml-5 rounded ">
+     
+        <div class="sm:flex sm:items-center  ">
+          
+          <input type="checkbox" id="avatar" class="hidden  top-10">
+          <label for="avatar" class="relative cursor-pointer">
+            <i class="fas fa-user-circle text-4xl text-gray-300"></i>
+            <!-- Options dropdown -->
+            <div>
+            <div id="dropdown" class="lg:absolute lg:top-full lg:overflow-auto lg:right-10 dj:absolute dj:right-20  bg-white/90 border border-gray-200 rounded shadow-md hidden">
+              <a href="user.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                <i class="fas fa-user mr-2"></i> Profile
+              </a>
+              <a href="settings.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                <i class="fas fa-cog mr-2"></i> Setting
+              </a>
+              <a href="logout.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                <i class="fas fa-sign-out-alt mr-2"></i> Logout
+              </a>
+            </div>
+          </div>
+          </label>
+        
+       </div>
+
+                       
+                       
+                     </div> 
+                     
+                 
+               </div>
+              
+       
+              </div>
+    
+    
+          </div>
+        </div>
+     
+      </div> 
+    
+
+
+
+
+
+</div>
+<div class="  flex items-center rounded-md px-4 duration-300   cursor-pointer lg:hidden ">
+  <i class="uil uil-apps lg:text-gray-300 dj:text-white font-bold text-[25px] font-serif "></i>
+  
+<span class="text-[15px] ml-4 lg:text-gray-200 dj:text-white font-bold  text-[20px] " >Dashboard</span>
+
+</div>
+<div class="  lg:mt-10  dj:pt-5 mx-auto  flex justify-between lg:ml-96 ">
+  <div class="dj:hidden lg:block"> <p class="text-4xl font-medium text-gray-300 font-serif"><i class="uil uil-building text-3xl font-medium "></i> Dashboard</p>
+    <p class="text-lg font-normal text-gray-300 font-serif"><i class="uil uil-home"></i>/   Home /   now here</p></div>
+ <div class="flex mr-10">
+  <div class="mb-4 mr-5">
+    <label class="block text-white text-sm font-bold mb-2 " for="dropdownMenu" >menu</label>
+    <div class="relative text-black font-bold">
+        <select class="block appearance-none w-full  border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8  shadow leading-tight focus:outline-none bg-white/50 focus:shadow-outline " id="dropdownMenu">
+            <option >Events</option>
+            <option>Components</option>
+            <option>Tables</option>
+        </select>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M6.293 7.293a1 1 0 011.414 0L10 9.586l2.293-2.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+        </div>
+    </div>
+</div>
+<div class="flex items-center justify-between">
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-3   focus:outline-none focus:shadow-outline" type="submit">
+        HD
+    </button>
+</div>
+</div>
+</div>
+<div class="flex dj:flex-col lg:flex-row sm:flex-row  dj:mt-5 lg:mt-0 mx-auto sm:flex-col md:flex-col hidden dj:block  lg:block   lg:ml-96 lg:w-screen">
+  
+
+  
+  <div class="flex flax-wrap dj:h-[650px] lg:h-[150px] dj:flex-col  lg:flex-row  ">
+<div class="bg-white/10 dj:ml-5  dj:mr-5 lg:ml-0 lg:mr-0 flex-wrap lg:w-[250px] shadow-md  p-4 border-b-4 border-indigo-500 hover:-translate-y-1  hover:scale-110 z-[1200]  lg:mt-10 duration-300 flex justify-between">
+  <div>
+    <h1 class="text-lg text-gray-300 font-serif">Student</h1>
+  <div><h1 class="text-3xl text-green-500 font-bold">90</h1></div>
+  
+</div>
+  <div class="">
+    <i class="uil uil-eye text-[60px] text-indigo-500  "></i> 
+    <div> <h1></h1></div>
+  </div>
+ 
+</div>
+
+
+<div class="bg-white/20 dj:ml-5 dj:mr-5 lg:ml-0 lg:mr-0 flex-wrap lg:w-[250px] lg:ml-5 dj:mt-10 shadow-md  p-4 border-b-4 border-red-500  hover:-translate-y-1 hover:scale-110  duration-300 flex justify-between">
+  <div>
+    <h1 class="text-lg text-gray-300 font-serif">Fee</h1>
+  <div><h1 class="text-3xl text-green-500 font-bold">50,000</h1></div>
+  
+</div>
+  <div class="">
+    <i class="uil uil-bill text-[60px] text-red-500  "></i> 
+    <div> <h1></h1></div>
+  </div>
+ 
+</div>
+
+
+<div class="bg-white/30 dj:ml-5 dj:mr-5 lg:ml-0 lg:mr-0 flex-wrap lg:w-[250px] lg:ml-5 dj:mt-10  shadow-md  p-4 border-b-4 border-cyan-500  hover:-translate-y-1 hover:scale-110  duration-300  flex justify-between">
+  <div>
+  <h1 class="text-lg text-gray-300 font-serif">Department</h1>
+  <div><h1 class="text-3xl text-green-500 font-bold">5</h1></div>
+  
+</div>
+  <div class="">
+    <i class="uil uil-books text-cyan-500 text-[60px] "></i> 
+    <div> <h1></h1></div>
+  </div>
+ 
+</div>
+<div class="bg-white/40 dj:ml-5 dj:mr-5 lg:ml-0 lg:mr-0 flex-wrap lg:w-[250px]  lg:ml-5 dj:mt-10  shadow-md  p-4 border-b-4 border-yellow-500  hover:-translate-y-1 hover:scale-110  duration-300  flex justify-between">
+  <div>
+    <h1 class="text-lg text-gray-300 font-serif">Bus</h1>
+  <div><h1 class="text-3xl text-green-500 font-bold">9</h1></div>
+  
+</div>
+  <div class="">
+    <i class="uil uil-bus text-yellow-500 text-[60px] "></i> 
+    <div> <h1></h1></div>
+  </div>
+ 
+</div>
+
+  </div>
+
+</div>
+<div class="  flex items-center rounded-md px-4 duration-300 cursor-pointer lg:hidden">
+  <i class="uil uil-chart text-white font-bold text-[25px] "></i>
+<span class="text-[15px] ml-4 text-white    font-bold  text-[20px]  text-lg">Student Data</span>
+
+</div>
+
+
+
+<div class="flex dj:flex-col   sm:flex-col md:flex-col  lg:block hidden lg:flex-row lg:mt-10 lg:ml-96 dj:ml-10 dj:w-4/5 lg:w-screen">
+
+  <section class="mt-8 ">
+  
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div class="bg-white/10  shadow-md lg:w-[699px] p-4  ">
+    
+       
+  <div class=" p-4 hidden lg:block  rounded-lg ">
+    <canvas id="areaChart"></canvas>
+  </div>
+
+        
+      </div>
+      
+      <!-- Card 2 -->
+    
+      <div class="bg-white/10  shadow-md p-4 lg:absolute right-[60px] lg:h-[380px]  hidden  lg:block  ">
+
+        <canvas id="chart3" ></canvas>
+      </div>
+      
+      
+      
+  </section>
+
+</div>
+
+
+
+<div class="flex dj:flex-col sm:flex-col md:flex-col lg:flex-row  dj:mt-10 lg:mt-10 lg:ml-96  lg:w-screen" >
+
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-8" >
+  <!-- Chart 1 -->
+
+  <div class="bg-white/10  dj:ml-5 dj:mr-5 lg:ml-0 lg:mr-0 flex-wrap shadow-lg p-4  " >
+   
+    <canvas id="chart1" ></canvas>
+  </div>
+  
+ 
+  
+  <!-- Chart 3 -->
+   <!-- Chart 2 -->
+  <div class="bg-white/10 p-4 dj:ml-5   overflow-hidden hover:overflow-y-auto   dj:mr-5 h-[260px] lg:ml-0 lg:mr-0 flex-wrap shadow-md  lg:w-[550px]  ">
+    
+    <div class="flex items-center justify-between" id="admi">
+      <span class="text-lg mt-10 font-bold text-gray-300">Admisstion</span>
+      <span class="bg-gray-200 text-gray-600 px-2 py-1 rounded-full text-xs">Today</span>
+    </div>
+    <div class="mt-4">
+      <div class="flex items-center justify-between py-2 border-b border-gray-200">
+        <div class="flex items-center">
+          <img class="h-8 w-8 rounded-full object-cover mr-3" src="cse.png" alt="Avatar">
+          <span class="font-semibold text-gray-300">Cse</span>
+        </div>
+        <span class="text-green-500 font-semibold">+25</span>
+      </div>
+      <div class="flex items-center justify-between py-2 border-b border-gray-200">
+        <div class="flex items-center">
+          <img class="h-8 w-8 rounded-full object-cover mr-3" src="btech.png" alt="Avatar">
+          <span class="font-semibold text-gray-300">b-tech</span>
+        </div>
+        <span class="text-green-500 font-semibold">+18</span>
+      </div>
+      <div class="flex items-center justify-between py-2  ">
+        <div class="flex items-center">
+          <img class="h-8 w-8 rounded-full object-cover mr-3" src="data.jpg" alt="Avatar">
+          <span class="font-semibold text-gray-300">Data Science</span>
+        </div>
+        <span class="text-red-500 font-semibold">-5</span>
+      </div>
+      
+      
+    </div>
+    <div class="flex items-center mt-16 justify-between">
+      <span class="text-lg font-bold text-gray-300">Student</span>
+      <span class="bg-gray-200 text-gray-600 px-2 py-1 rounded-full text-xs">old</span>
+    </div>
+    <div class="mt-4">
+      <div class="flex items-center justify-between py-2 border-b border-gray-200">
+        <div class="flex items-center">
+          <img class="h-8 w-8 rounded-full object-cover mr-3" src="mba.jpg" alt="Avatar">
+          <span class="font-semibold text-gray-300">MBA</span>
+        </div>
+        <span class="text-green-500 font-semibold">95</span>
+      </div>
+      <div class="flex items-center justify-between py-2 border-b border-gray-200">
+        <div class="flex items-center">
+          <img class="h-8 w-8 rounded-full object-cover mr-3" src="old.jpg" alt="Avatar">
+          <span class="font-semibold text-gray-300">ME</span>
+        </div>
+        <span class="text-green-500 font-semibold">45</span>
+      </div>
+      <div class="flex items-center justify-between py-2  ">
+        <div class="flex items-center">
+          <img class="h-8 w-8 rounded-full object-cover mr-3" src="file.jpg" alt="Avatar">
+          <span class="font-semibold text-gray-300">COLLAGE</span>
+        </div>
+        <span class="text-red-500 font-semibold">350</span>
+      </div>
+      
+      
+    </div>
+    
+  </div>
+</section>
+</div>
+ <!-- Chart 2 -->
+ 
+    
+
+
+
+
+
+
+
+
+
+<div class="flex dj:flex-col sm:flex-col md:flex-col lg:flex-row  dj:mt-10 lg:mt-10 lg:ml-96 lg:w-screen ">
+
+<section class="">
+  <!-- Chart 1 -->
+  <div class="bg-white/20 p-4 border-b-4 border-purple-500 dj:ml-5 dj:mr-5 flex-wrap shadow-md  hover:-translate-y-1 hover:scale-110  duration-300 ... ">
+    <div class="w-full md:w-1/2 xl:w-1/3 p-3 transition ease-in-out delay-150 ">
+      <div class="bg-white/10 dj:w-52 sm-w-96 lg:w-full  border p-2">
+          <div class="flex flex-row items-center">
+              <div class="flex-shrink pr-2">
+                  <div class="rounded p-3 bg-white/5 hidden lg:block"><i class="uil uil-bill  hidden lg:block px-2 py-1 bg-blue-600 text-white rounded-md"></i></div>
+              </div>
+              <div class="flex-1  md:text-center">
+                  <h5 class="font-bold uppercase  text-white">Total income</h5>
+                  <h3 class="font-bold lg:text-3xl dj:text-xl text-green-500"><span class="text-green-500"><i class="uil uil-rupee-sign"></i></span> 58,000 </h3>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+  
+  
+  <!-- Chart 2 -->
+  <div class="bg-white/20 p-4  border-b-4 dj:ml-5 dj:mr-5 flex-wrap shadow-md border-indigo-500 hover:-translate-y-1 hover:scale-110  duration-300 ... mt-10 ">
+    <div class="w-full md:w-1/2 xl:w-1/3 p-3 transition ease-in-out delay-150 ">
+      <div class="bg-white/10 dj:w-52 sm-w-96 lg:w-full border   p-2">
+          <div class="flex flex-row items-center">
+              <div class="flex-shrink pr-2">
+                  <div class="rounded p-3 bg-white/5 hidden lg:block"><i class="uil uil-table  hidden lg:block px-2 py-1 bg-blue-600 text-white rounded-md"></i></div>
+              </div>
+              <div class="flex-1  md:text-center">
+                  <h5 class="font-bold uppercase  text-white">Today Income</h5>
+                  <h3 class="font-bold lg:text-3xl dj:text-xl text-green-500"><span class="text-green-500"><i class="uil uil-rupee-sign"></i></span> 12,000 </h3>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+  
+  <!-- Chart 3 -->
+  <div class="bg-white/20 p-4  border-b-4 dj:ml-5 dj:mr-5 flex-wrap shadow-md border-sky-500 hover:-translate-y-1 hover:scale-110  duration-300 ... mt-10 ">
+    <div class="w-full md:w-1/2 xl:w-1/3 p-3 transition ease-in-out delay-150  ">
+      <div class="bg-white/10 dj:w-52 sm-w-96 lg:w-full   border p-2">
+          <div class="flex flex-row items-center">
+              <div class="flex-shrink pr-2">
+                  <div class="rounded p-3 bg-white/5 hidden lg:block"><i class="uil uil-watch  hidden lg:block px-2 py-1 bg-blue-600 text-white rounded-md"></i></div>
+              </div>
+              <div class="flex-1  md:text-center">
+                  <h5 class="font-bold uppercase  text-white">This year</h5>
+                  <h3 class="font-bold lg:text-3xl dj:text-xl text-green-500"><span class="text-green-500"><i class="uil uil-rupee-sign"></i></span>50,0000 </h3>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+
+ 
+</section>
+<div class="bg-white/10   shadow-md p-4 pt-10 dj:mt-10 lg:mt-0 lg:absolute dj:ml-5 dj:mr-5 flex-wrap dj:block right-10 lg:w-[700px] lg:h-[490px]  ">
+
+  <canvas id="chart2" ></canvas>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="  hidden lg:block dj:mt-10 lg:mt-10 lg:ml-96 dj:ml-10 l lg:w-screen " >
+
+    
+      <!-- Repeat the above structure for more activity items -->
+     
+    
+
+
+    <div class="bg-white/10   lg:w-[1055px] flex-wrap p-4 shadow   mt-10 overflow-hidden">
+      <h1 class="text-xl text-gray-300 ml-5 font-bold mb-2 underline" id="timetable">Time-table</h1>
+    <div class="max-w-4xl mx-auto">
+      <table class="w-full bg-white/0 shadow-md  overflow-hidden">
+          <thead class="bg-white/0">
+              <tr>
+                  <th class="text-left px-4 py-2 text-gray-200" >Time</th>
+                  <th class="text-left px-4 py-2 text-gray-200">Monday</th>
+                  <th class="text-left px-4 py-2 text-gray-200">Tuesday</th>
+                  <th class="text-left px-4 py-2 text-gray-200">Wednesday</th>
+                  <th class="text-left px-4 py-2 text-gray-200">Thursday</th>
+                  <th class="text-left px-4 py-2 text-gray-200">Friday</th>
+                  <th class="text-left px-4 py-2 text-gray-200">Saturday</th>
+                  <th class="text-left px-4 py-2 text-gray-200">Sunday</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td class=" px-4 py-2 text-gray-200">9:00 AM</td>
+                  <td class=" px-4 py-2 text-gray-200">Math</td>
+                  <td class=" px-4 py-2 text-gray-200">Science</td>
+                  <td class=" px-4 py-2 text-gray-200">English</td>
+                  <td class=" px-4 py-2 text-gray-200">History</td>
+                  <td class=" px-4 py-2 text-gray-200">Geography</td>
+                  <td class=" px-4 py-2 text-gray-200">-</td>
+                  <td class=" px-4 py-2 text-gray-200">-</td>
+              </tr>
+              <tr>
+                  <td class=" px-4 py-2 text-gray-200">10:00 AM</td>
+                  <td class=" px-4 py-2 text-gray-200">-</td>
+                  <td class=" px-4 py-2 text-gray-200">Science</td>
+                  <td class=" px-4 py-2 text-gray-200">Math</td>
+                  <td class=" px-4 py-2 text-gray-200">History</td>
+                  <td class=" px-4 py-2 text-gray-200">Social</td>
+                  <td class=" px-4 py-2 text-gray-200">-</td>
+                  <td class=" px-4 py-2 text-gray-200">-</td>
+              </tr>
+              <tr>
+                <td class=" px-4 py-2 text-gray-200">10:00 AM</td>
+                <td class=" px-4 py-2 text-gray-200">-</td>
+                <td class=" px-4 py-2 text-gray-200">EEE</td>
+                <td class=" px-4 py-2 text-gray-200">Data</td>
+                <td class=" px-4 py-2 text-gray-200">M-3</td>
+                <td class=" px-4 py-2 text-gray-200">OS</td>
+                <td class=" px-4 py-2 text-gray-200">-</td>
+                <td class=" px-4 py-2 text-gray-200">-</td>
+            </tr>
+            <tr>
+              <td class=" px-4 py-2 text-gray-200">10:00 AM</td>
+              <td class=" px-4 py-2 text-gray-200">-</td>
+              <td class=" px-4 py-2 text-gray-200">Software</td>
+              <td class=" px-4 py-2 text-gray-200">ADA</td>
+              <td class=" px-4 py-2 text-gray-200">OOPM</td>
+              <td class=" px-4 py-2 text-gray-200">physics</td>
+              <td class=" px-4 py-2 text-gray-200">-</td>
+              <td class=" px-4 py-2 text-gray-200">-</td>
+          </tr>
+          <tr>
+            <td class=" px-4 py-2 text-gray-200">10:00 AM</td>
+            <td class=" px-4 py-2 text-gray-200">-</td>
+            <td class=" px-4 py-2 text-gray-200">Python</td>
+            <td class=" px-4 py-2 text-gray-200">Java</td>
+            <td class=" px-4 py-2 text-gray-200">Php</td>
+            <td class=" px-4 py-2 text-gray-200">My SQL</td>
+            <td class=" px-4 py-2 text-gray-200">-</td>
+            <td class=" px-4 py-2 text-gray-200">-</td>
+        </tr>
+              <!-- Add more rows for each hour of the day -->
+          </tbody>
+      </table>
+  </div>
+    </div>
+
+
+
+    <div class="bg-white/10    lg:w-[550px] h-20  mt-10 overflow-hidden" id="notification">
+      <div class="p-4">
+          <!-- Activity Item -->
+          <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center">
+                  <img class="h-10 w-10 rounded-full object-cover border border-black mr-3" src="aw.png" alt="User Photo">
+                  <div>
+                      <p class="text-gray-300 font-semibold">User Anmol created a new post</p>
+                      <div class="flex items-center space-x-2">
+                       
+                          <p class="text-gray-300 text-sm">2 hours ago</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="flex items-center space-x-4">
+                  <img class="h-5 w-5" src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail Icon">
+                  <a href="mailto:user@example.com" class="text-blue-500 hover:underline">khede62@gmail.com</a>
+              </div>
+          </div>
+          <!-- End of Activity Item -->
+  
+          <!-- Repeat the above structure for more activity items -->
+      </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  <div class="bg-white/10   lg:w-[550px]  shadow-md h-20  mt-10 overflow-hidden">
+    <div class="p-4">
+        <!-- Activity Item -->
+        <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center">
+                <img class="h-10 w-10 rounded-full border border-black object-cover mr-3" src="aw.png" alt="User Photo">
+                <div>
+                    <p class="text-gray-300 font-semibold">User Ajay created a new post</p>
+                    <div class="flex items-center space-x-2">
+                     
+                        <p class="text-gray-300 text-sm">2 hours ago</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <img class="h-5 w-5" src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail Icon">
+                <a href="mailto:user@example.com" class="text-blue-500 hover:underline">anmolkhede62@gmail.com</a>
+            </div>
+        </div>
+        <!-- End of Activity Item -->
+  
+    
+  </div>
+  
+  </div>
+
+
+</div>
+
+
+  
+
+
+
+
+
+
+    
+
+
+  
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+    <footer class="bg-white/10 mt-10 text-white py-4">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2024 clone by Anmol khede . All rights reserved.</p>
+      </div>
+    </footer>
+
+
+
+
+
+
+
+
+    <script>
+      const data = {
+      
+          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+          scaleFontColor: "white",
+          datasets: [{
+              label: 'Student Placements ',
+          
+              data: [14, 69, 20, 51, 16, 35, 90],
+              fill: true,
+              backgroundColor: 'rgba(79, 70, 229, 0.2)',
+              borderColor: 'rgba(79, 70, 229, 1)',
+              borderWidth: 2,
+              tension: .5
+          },
+        {
+          label: 'Curuently ',
+          
+              data: [70,40,25,31,96,14,27,37,82,],
+              fill: true,
+              backgroundColor: 'rgba(225, 225, 225, 0.1)',
+              borderColor: 'lightblue',
+              borderWidth: 2,
+              tension: .4
+        }
+        
+        
+        ]
+      };
+  
+      const config = {
+          type: 'line',
+          data: data,
+          options: {
+            animations: {
+              
+      y: {
+        easing: 'easeInOutElastic',
+        from: (ctx) => {
+          if (ctx.type === 'data') {
+            if (ctx.mode === 'default' && !ctx.dropped) {
+              ctx.dropped = true;
+              return 0;
+            }
+          }
+        }
+      }
+
+      
+    },
+           fontsize:30,
+         
+              scales: {
+                  x: {
+                    
+                      grid: {
+                          display: true,
+                      },
+                      ticks: { color: 'white', beginAtZero: true }
+                  },
+                  y: {
+                      grid: {
+                          display: false
+                      },
+
+                      ticks: { color: 'white', beginAtZero: true }
+                  }
+              },
+              
+                
+              plugins: {
+                title: {
+          display: true,
+          text: 'collage Placement',
+          position:'top',
+          color: 'lightgray',
+          font: {
+            family: 'roboto',
+            size: 25,
+            weight: '',
+            lineHeight: 1.2,
+          },
+          padding: {top: 0, left: 0, right: 0, bottom: 0}
+        },
+                  legend: {
+                      display: false,
+                      labels: {
+                color: "white",
+            },
+                  },
+                  
+              }
+          }
+      };
+  
+      var myChart = new Chart(
+          document.getElementById('areaChart'),
+          config
+      );
+  </script>
+
+
+    <script>
+      // Chart 1 - Bar Chart
+      const ctx1 = document.getElementById('chart1').getContext('2d');
+      new Chart(ctx1, {
+        type: 'bar',
+        data: {
+          labels: ['Cse', 'B-tech', 'Data', 'MBA', 'ME', 'EEE'],
+          datasets: [{
+            label: 'Admited',
+            data: [25, 18, 5, 95, 45, 21],
+            backgroundColor: [
+            '#FFA500',
+
+
+            ],
+            borderColor: [
+              '#06265c',
+'#335385',
+'#6084ad',
+'#93b7d6',
+'#ccebff',
+
+
+            ],
+            borderWidth: 1
+          },
+          {
+            label: 'Success full ',
+            data: [45, 21, 33, 15, 67, 31],
+            backgroundColor: [
+            '#6084ad',
+            ],
+            borderColor: [
+      
+
+
+            ],
+            borderWidth: 1
+          },
+          {
+            label: 'process',
+            data: [25, 18, 37, 45, 45, 21],
+            backgroundColor: [
+         'powderblue',
+
+            ],
+            borderColor: [
+       
+
+
+            ],
+            borderWidth: 1
+          },
+
+
+        ]
+        },
+        options: {
+          plugins: {
+            title: {
+          display: true,
+          text: 'collage Admisstion',
+          position:'top',
+          color: 'lightgray',
+          font: {
+            family: 'roboto',
+            size: 25,
+            weight: '',
+            lineHeight: 1.2,
+          },
+          padding: {top: 0, left: 0, right: 0, bottom: 0}
+        },
+        // changin the lagend colour
+        legend: {
+          display:false,
+
+            labels: {
+                color: "white",
+            },
+        },
+    },
+          scales: {
+            y: {
+              ticks: { color: 'white', beginAtZero: true }
+            },
+            x:{
+              ticks: { color: 'white', beginAtZero: true }
+            }
+          }
+        }
+      });
+  
+      // Chart 2 - Line Chart
+      const ctx2 = document.getElementById('chart2').getContext('2d');
+      new Chart(ctx2, {
+        type: 'line',
+        data: {
+          labels: ['social', 'tech', 'history', 'data', 'digital', 'software', 'hardware'],
+          datasets: [{
+            label: 'student knowlage',
+            data: [05, 22, 40, 31, 16, 95, 10],
+      
+            fill: true,
+            backgroundColor: 'rgba(225, 225, 225, 0.1)',
+        
+
+            
+            borderColor: 'powderblue',
+            tension: .4
+          },
+        
+        {
+          label: 'student has not knowlagdge',
+            data: [25,70,55,14,23,54,84,19],
+      
+            fill: true,
+            backgroundColor: 'rgba(225, 225, 225, 0.1)',
+        
+
+            
+            borderColor: 'orange',
+            tension: 0.4,
+        
+        }
+        ]
+        },
+        options: {
+     
+          plugins: {
+            title: {
+          display: true,
+          text: 'Student Knowladge chart',
+          position:'top',
+          color: 'lightgray',
+          font: {
+            family: 'roboto',
+            size: 25,
+            weight: '',
+            lineHeight: 1.2,
+          },
+          padding: {top: 0, left: 0, right: 0, bottom: 0}
+        },
+        // changin the lagend colour
+        legend: {
+          display:false,
+            labels: {
+
+                color: "white",
+            },
+        },
+    },
+      
+          scales: {
+            y: {
+              ticks: { color: 'white', beginAtZero: true }
+            },
+            x:{
+              ticks: { color: 'white', beginAtZero: true }
+            }
+          }
+        }
+      });
+  
+      // Chart 3 - Doughnut Chart
+      const ctx3 = document.getElementById('chart3').getContext('2d');
+      new Chart(ctx3, {
+    
+        type: 'doughnut',
+        data: {
+          labels: ['pass', 'fail', 'supply'],
+          datasets: [{
+            label: 'Student',
+            data: [30, 50, 100],
+            backgroundColor: [
+            'orange',
+            '	#87CEFA',
+            'rgba(79, 70, 229, 1)',
+            ],
+        borderColor:[
+        '#FFA500',
+            '	#87CEFA',
+            'rgba(79, 70, 229, 1)',
+    ],
+        
+   
+          }]
+        },
+        options: {
+          
+          cutout:85,
+
+   
+    plugins: {
+        // changin the lagend colour
+        title: {
+          display: true,
+          text: 'Student Result',
+          position:'top',
+          color: 'lightgray',
+          font: {
+            family: 'roboto',
+            size: 25,
+            weight: '',
+            lineHeight: 1.2,
+          },
+          padding: {top: 0, left: 0, right: 0, bottom: 30}
+        },
+        legend: {
+          padding: {top: 0, left: 0, right: 0, bottom: 30},
+            labels: {
+                color: "white",
+            },
+        },
+    },
+      }});
+      
+    </script>
+
+
+
+
+    <script>
+      // Toggle dropdown when avatar is clicked
+      document.getElementById('avatar').addEventListener('change', function() {
+        var dropdown = document.getElementById('dropdown');
+        dropdown.classList.toggle('hidden');
+      });
+    </script>
+      <script>
+        // Toggle dropdown when avatar is clicked
+        document.getElementById('avatar').addEventListener('change', function() {
+          var dropdown = document.getElementById('drop');
+          dropdown.classList.toggle('hidden');
+        });
+      </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  <script>
+    function dropDown() {
+      document.querySelector('#submenu').classList.toggle('hidden')
+      document.querySelector('#arrow').classList.toggle('rotate-0')
+    }
+    dropDown()
+
+    function Openbar() {
+      document.querySelector('.sidebar').classList.toggle('left-[-300px]')
+    }
+  </script>
+</body>
+</html>

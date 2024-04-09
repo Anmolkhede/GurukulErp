@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <!----======== CSS ======== -->
+ 
+    <script src="https://cdn.tailwindcss.com"></script>
+   <script>
+/** @type {import('tailwindcss').Config} */
+
+tailwind.config = {
+  theme: {
+    screens: {
+      'sm': '400px',
+      // => @media (min-width: 640px) { ... }
+
+      'lg': '1024px',
+      // => @media (min-width: 1024px) { ... }
+     
+      'desktop': '1280px',
+      // => @media (min-width: 1280px) { ... }
+      'dj': '100px',
+    },
+  }
+}
+</script>
+    <!----===== Iconscout CSS ===== -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+
+    <title>Admin Dashboard Panel</title>
+</head>
+
+
+
+
+
+
+
+<body class="min-h-screen p-2 bg-slate-200 font-sans  ">
+
+<img src="d.png" class="absolute top-0 left-96 hidden lg:block opacity-10">
+
+
+    
+<div class="flex justify-between ">
+
+<div>
+
+      <div class="sidebar z-[11000] fixed top-0 bottom-0 lg:left-0 left-[-300px]  scroll-smooth lg:overflow-y-hidden       sm:overflow-y-hidden     sm:hover:overflow-y-auto  dj:overflow-y-hidden     dj:hover:overflow-y-auto hover:overflow-y-auto duration-1000
+        p-2 w-[300px]  text-center   h-screen  lg:bg-sky-900  border-r-2 border-sky-900  dj:bg-blue-400">
+        <div class="text-black-100 text-xl">
+          <div class="p-2.5 mt-1 flex items-center rounded-md ">
+            <img src="ge.png"class="rounded-full w-10 font-normal  hidden sm:block dj:block  xl:block dj:flex dj:justify-center" alt="">
+            <h1 class="  ml-3 text-xl  text-white font-medium">Gurukul ERP</h1>
+            <i class="bi bi-x ml-20 cursor-pointer lg:hidden text-black " onclick="Openbar()"></i>
+          </div>
+          <hr class="my-2 text-white-600">
+    
+          <div>
+            <div class="p-2.5 mt-3 flex lg:bg-white dj:bg-white border  items-center rounded-md 
+            px-4 duration-300 cursor-pointer  ">
+              <i class="bi bi-search text-sm " ></i>
+              <input class="text-[15px] ml-4 w-full text-black  lg:bg-white  dj:bg-white focus:outline-none" placeholder="Serach" />
+            </div>
+    
+            <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
+                <i class="uil uil-apps text-white "></i>
+              <span class="text-[15px] ml-4 text-white    text-lg">Dashboard</span>
+            </div>
+            <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
+                <i class="uil uil-plus text-white "></i>
+              <span class="text-[15px] ml-4 text-white   text-lg">Admisstion</span>
+            </div>
+            <hr class="my-4 text-gray-600">
+            <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
+              <i class="uil uil-bill text-white "></i>
+            <div class="flex justify-between w-full text-white  items-center" onclick="dropDown()">
+              <span class="text-[15px] ml-4 text-lg text-white "> Fees & Payments</span>
+              <span class="text-sm rotate-180 " id="arrow">
+                <i class="bi bi-chevron-down"></i>
+              </span>
+            </div>
+          </div>
+          <div class=" leading-7 text-left text-sm font-thin mt-2 w-4/5 mx-auto" id="submenu">
+            <a href="expe.html"><h1 class="cursor-pointer p-2  hover:bg-blue-600 text-white  text-lg rounded-md mt-1"><i class="uil uil-plus-circle mr-4 text-white "></i>Add Particular Fee </h1></a>
+            <h1 class="cursor-pointer p-2  hover:bg-blue-600 text-white    text-lg rounded-md mt-1"><i class="uil uil-clipboard-notes mr-4 text-white "></i>Particulars List</h1>
+            <h1 class="cursor-pointer p-2  hover:bg-blue-600 text-white  text-lg rounded-md mt-1"><i class="uil uil-book-reader mr-4 text-white "></i>Student Fee  </h1>
+            <h1 class="cursor-pointer p-2  hover:bg-blue-600 text-white  text-lg rounded-md mt-1"><i class="uil uil-book-medical mr-4 text-white "></i>Submit Fee   </h1>
+            <h1 class="cursor-pointer p-2  hover:bg-blue-600 text-white  text-lg rounded-md mt-1"><i class="uil uil-archive mr-4 text-white  "></i>Payment History   </h1>
+          </div>
+            <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
+                <i class="uil uil-user text-white "></i>
+              <span class="text-[15px] ml-4 text-white   text-lg">Student</span>
+            </div>
+            <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
+                <i class="uil uil-bell text-white "></i>
+                <span class="text-[15px] ml-4 text-white   text-lg">Notification</span>
+              </div>
+              <div class="p-2.5 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
+                <i class="uil uil-clipboard-alt text-white "></i>
+                <span class="text-[15px] ml-4 text-white   text-lg">Time-table</span>
+              </div>
+    
+          
+            <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer  hover:bg-blue-600">
+                <i class="uil uil-setting text-white  "></i>
+              <span class="text-[15px] ml-4 text-white  text-lg">Setting</span>
+            </div>
+            </div>
+              
+    
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+
+    
+<div class="lg:bg-white/20 dj:bg-transparent lg:fixed  w-screen top-0 lg:h-[65px] dj:h-[50px] z-[10000] lg:shadow">
+<div class="flex lg:justify-between border-gray-50 mt-2">
+    <div>
+        <span class=" text-black text-4xl dj:block   lg:hidden cursor-pointer" onclick="Openbar()">
+            <i class="bi bi-filter-left px-2 lg:bg-blue-600/15 dj:bg-blue-600 rounded-md "></i>
+          </span>
+    </div>
+    <div class=" hidden lg:block top-3 lg:absolute right-[900px]">
+    <div class="  flex items-center rounded-md  ">
+      <i class="uil uil-chart  hidden  dj:block dj:left-0 dj:ml-5  lg:block px-2 py-1 bg-blue-600 text-white rounded-md"></i>
+      <h1 class="text-4xl   text-black 
+      dj:ml-5  text-black font-medium">Dashboard</h1>
+      
+  </div>
+    </div>
+   
+    <div class=" hidden lg:block  lg:absolute right-[800px]">
+      <div class="flex-shrink pr-2">
+        <div class="rounded-full p-3 text-center hover:bg-blue-500 bg-white/30 hidden w-[50px] lg:block"><i class="fa-solid fa-bars text-bold text-xl"></i></div>
+    </div>
+    </div>
+   
+    <div class="p-1.5 flex   bg-white/30 lg:w-96 hidden lg:mt-1 border border-black dj:block lg:block dj:w-3/4 dj:ml-3 items-center rounded-full lg:absolute dj:static lg:right-96
+    px-4 duration-300 cursor-pointer   dj:h-[40px] ">
+      <i class="bi bi-search text-sm hidden " ></i>
+      <input class="text-[15px]  text-black bg-white/5  focus:outline-none" placeholder="global search" />
+    </div>
+    <div class=" hidden lg:block  lg:absolute right-[300px]">
+      <div class="flex-shrink pr-2">
+        <div class="rounded-full p-3 text-blue-500 font-medium text-center hover:bg-blue-100 bg-white/30 hidden w-[50px] lg:block"><i class="fa-brands fa-facebook"></i></div>
+    </div>
+    </div>
+
+
+    <div class=" hidden lg:block  lg:absolute  right-[240px]">
+      <div class="flex-shrink pr-2">
+        <div class="rounded-full p-3 text-center hover:bg-blue-500  bg-white/30 hidden w-[50px] lg:block"><i class="fa-brands fa-youtube text-red-500 font-medium hover:text-black"></i></div>
+    </div>
+    </div>
+      <div class="w-[200px] rounded hidden lg:block mt-1 lg:absolute right-[30px]">
+        <div class="sm:flex sm:items-center px-6 ">
+          <input type="checkbox" id="avatar" class="hidden  top-10">
+          <label for="avatar" class="relative cursor-pointer">
+            <i class="fas fa-user-circle text-4xl text-gray-800"></i>
+            <!-- Options dropdown -->
+            <div>
+            <div id="dropdown" class="absolute top-full overflow-auto left-0  bg-white/30 border border-gray-200 rounded shadow-md hidden">
+              <a href="profile.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                <i class="fas fa-user mr-2"></i> Profile
+              </a>
+              <a href="settings.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                <i class="fas fa-cog mr-2"></i> Settings
+              </a>
+              <a href="logout.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                <i class="fas fa-sign-out-alt mr-2"></i> Logout
+              </a>
+            </div>
+          </div>
+          </label>
+       </div>
+                       
+                       
+                     </div>
+                    <hr class="hidden dj:block  lg:my-10 dj:mt-20 lg:ml-96  text-gray-900">
+               </div>
+        
+              </div>
+    
+              
+    
+          </div>
+        </div>
+    
+      </div> 
+    
+
+
+
+
+
+</div>
+<div class="flex dj:flex-col pt-10 mx-auto sm:flex-col md:flex-col lg:block hidden lg:flex-row lg:mt-10  dj:ml-10 dj:w-4/5 lg:w-screen">
+<div class="container mx-auto px-4 py-8">
+    <div class="max-w-md mx-auto bg-white  p-6 rounded-lg">
+        <h2 class="text-lg font-semibold text-gray-800 mb-4">Account Settings</h2>
+        <form>
+            <div class="mb-4">
+                <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                <input type="text" id="name" name="name" class="mt-1 p-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" id="email" name="email" class="mt-1  p-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+            </div>
+            <div class="mb-4">
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input type="password" id="password" name="password" class="mt-1 p-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+            </div>
+            <div class="mb-4">
+                <label for="confirm-password" class="block text-sm font-medium text-gray-700">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" class="mt-1 focus:ring-indigo-500 p-2 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+            </div>
+            <div>
+                <button type="submit" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Save Changes</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+<script>
+    // Toggle dropdown when avatar is clicked
+    document.getElementById('avatar').addEventListener('change', function() {
+      var dropdown = document.getElementById('dropdown');
+      dropdown.classList.toggle('hidden');
+    });
+  </script>
+ <script>
+    function dropDown() {
+      document.querySelector('#submenu').classList.toggle('hidden')
+      document.querySelector('#arrow').classList.toggle('rotate-0')
+    }
+    dropDown()
+
+    function Openbar() {
+      document.querySelector('.sidebar').classList.toggle('left-[-300px]')
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <!-- Include Tailwind CSS -->
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+
+<body class="bg-slate-200 overflow-x-hidden">
+    <!-- Header Section -->
+    <header class="bg-gray-800 border-b-2 border-gray-500 shadow ">
+        <div class="container mx-auto px-4 py-3 flex justify-between flex-wrap gap-2">
+            <div>   <h1 class="text-4xl   text-gray-300 
+                dj:ml-5  text-black font-serif font-medium">Gurukul Erp</h1></div>
+               
+
+            <div class=" hidden lg:block ">
+                <div class="flex-shrink pr-2">
+                  <div class="rounded-md p-2 text-center hover:bg-blue-500 bg-white/20 text-gray-300 hidden w-[50px] lg:block"><i class="fa-solid fa-bars text-bold text-xl"></i></div>
+              </div>
+              </div>
+         
+            <div class="p-1.5 flex   bg-white/20     items-center rounded-full
+            px-4 duration-300 cursor-pointer  w-[500px] ">
+              <i class="bi bi-search text-sm hidden " ></i>
+              <input class="text-[15px]  text-black bg-white/0  focus:outline-none" placeholder="global search" />
+              
+           
+            </div>
+            
+
+
+            <div class="w-[200px] rounded hidden lg:block ">
+                <div class="sm:flex sm:items-center px-6 ">
+                  <input type="checkbox" id="avatar" class="hidden  top-10">
+                  <label for="avatar" class="relative cursor-pointer">
+                    <i class="fas fa-user-circle text-4xl text-gray-300"></i>
+                    <!-- Options dropdown -->
+                    <div>
+                    <div id="dropdown" class="absolute top-0 overflow-auto right-10 top-24  bg-white/30 border border-gray-200 rounded shadow-md hidden">
+                      <a href="user.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                        <i class="fas fa-user mr-2"></i> Profile
+                      </a>
+                      <a href="settings.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                        <i class="fas fa-cog mr-2"></i> Setting
+                      </a>
+                      <a href="logout.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                        <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                      </a>
+                    </div>
+                  </div>
+                  </label>
+               </div>
+                               
+                               
+                             </div>
+        </div>
+   
+    </header>
+  
+    <a href="index.html" class="absolute  dj:block dj:top-20 right-10 underline font-serif text-gray-800">Home</a>
+    <div class="hidden lg:block"><p class="text-xl  font-bold ml-2 font-serif">Fees & Payements</p>
+        
+        <div class="flex gap-10 border-b-2 font-serif mt-2 border-b-2 border-gray-300">
+            <div class="ml-2 "><a href="pfees.html">Add Particular Fees</a></div>
+            <div class=""><a href="flist.html">Particular List</a></div>
+            <div class="border-b-2 border-blue-500"><a href="sfees.html">Student Fee</a></div>
+          
+            <div class=" "><a href="su.html">Submit Fee</a></div>
+            <div class=" "><a href="hfee.html">Payment History</a></div>
+          
+          <hr class="my-2 text-white">
+        
+        </div></div>
+        <div class="   dj:pt-5 mt-5 mx-auto absolute font-serif top-12 hidden lg:block left-[1000px] flex justify-between  lg:ml-48 ">
+            <div class="hidden lg:block"> <p class="text-2xl font-medium"><i class="uil uil-building text-2xl font-medium"></i>Student</p>
+              <p class=" font-normal"><i class="uil uil-home"></i>   Dasboard >   Student Fee</p></div>
+           <div class="flex mr-10">
+          
+          <div class="flex items-center justify-between">
+            
+          </div>
+          </div>
+          </div>
+ 
+    <!-- Main Content Section -->
+    <div class="container mx-auto lg:px-20 py-8">
+        <!-- Student List -->
+        <div class="bg-white shadow overflow-hidden sm:rounded-lg mb-8">
+            <div class="px-4 py-5 sm:px-6">
+                
+                <h2 class="text-lg font-medium leading-6 text-gray-900">Student List</h2>
+            </div>
+            <div class="border-t border-gray-200 lg:flex">
+                <!-- Student Name Input -->
+                <div class="bg-white/20 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <label for="studentName" class="block text-sm font-medium text-gray-700">Student Name:</label>
+                    <input type="text" id="studentName" name="studentName" placeholder="Enter Your Name"class="mt-1 p-2 w-full  border-b-2 border-black    ">
+                </div>
+                <!-- Student Class Dropdown -->
+                <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <label for="class" class="block text-sm font-medium text-gray-700">Select Student Class:</label>
+                    <select id="class" name="class" class="mt-1 p-2 w-full border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                        
+                        <option value="class1">दसवीं</option>
+                        <option value="class2">ग्यारवी</option>
+                        <option value="class3">बारहवीं</option>
+
+
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+              
+              
+            </div>
+        </div>
+        <div class="ju"> <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Submit</button></div>
+       
+             
+        <div class="bg-white  p-8 rounded-lg mt-10 shadow-md mb-8">
+            <p class="text-xl mb-4">Particular Student Data</p>
+            <table class="w-full">
+                <tbody>
+                    <td class="border px-4 py-2 "><img src="aw.png" alt="Student Image" class="w-24 h-24 rounded-full border shadow-md"></td>
+                    <td class="border px-4 py-2"></td>
+
+                    <tr>
+                        <td class="border px-4 py-2">Student Name:</td>
+                        <td class="border px-4 py-2">Anmol Khede</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Father's Name:</td>
+                        <td class="border px-4 py-2">Mr. Khede</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Mobile Number:</td>
+                        <td class="border px-4 py-2">1234567890</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Category:</td>
+                        <td class="border px-4 py-2">General</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Class:</td>
+                        <td class="border px-4 py-2">10</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Section:</td>
+                        <td class="border px-4 py-2">A</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Admission Number:</td>
+                        <td class="border px-4 py-2">12345</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Roll Number:</td>
+                        <td class="border px-4 py-2">10A123</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">RTE Status:</td>
+                        <td class="border px-4 py-2">No</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Student Fee List -->
+        <div class="bg-white  shadow overflow-hidden sm:rounded-lg  mb-8">
+            <div class="px-4 py-5 sm:px-6">
+                <h2 class="text-lg font-medium leading-6 text-gray-900">Student Fee List</h2>
+            </div>
+            <div class="border-t border-gray-200">
+                <dl>
+                    <!-- Tuition Fee -->
+                    <div class="bg-gray-50 border-t border-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">Tuition Fee</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2">RS.500</dd>
+                    </div>
+                    <!-- College Fees -->
+                    <div class="bg-white border-t border-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">College Fees</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2">RS.300</dd>
+                    </div>
+                    <!-- Add more fee items here -->
+
+                    <div class="bg-gray-50 border-t border-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">books Fees</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2">RS.1000</dd>
+                    </div>
+                    <div class="bg-white border-t border-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">card Fees</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2">RS.500</dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+
+        <!-- Total Fees Section -->
+        <div class="bg-white shadow overflow-hidden sm:rounded-lg mb-8">
+            <div class="px-4 py-5 sm:px-6">
+                <h2 class="text-lg font-medium leading-6 text-gray-900">Total Fees</h2>
+            </div>
+            <div class="border-t flex border-gray-200">
+                <!-- Total Fees Calculation -->
+                <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <label for="totalFees" class="block text-sm font-medium text-gray-700">Total Fees:</label>
+                    <span id="totalFees" class=" text-sm text-gray-900">RS.2300</span>
+                </div>
+                <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <label for="totalFees" class="block text-sm font-medium text-gray-700">Paid Fees:</label>
+                    <span id="totalFees" class=" text-sm text-gray-900">RS.100</span>
+                </div>
+                <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <label for="totalFees" class="block text-sm font-medium text-gray-700">Remain Fees:</label>
+                    <span id="totalFees" class=" text-sm text-gray-900">RS.2200</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mx-auto p-4">
+   
+       
+
+        <h2 class=" font-semibold mb-4 flex justify-between items-center">
+            Fee Details
+            <!-- Print Button -->
+         
+            <!-- Import and Export Dropdowns -->
+            <div class="flex space-x-4">
+                <button class="bg-blue-500  text-white px-2 py-2 hidden lg:block ">Print</button>
+                <!-- Import Dropdown -->
+                <div class="relative">
+                    
+                    <button class="bg-green-500  text-white px-2 hidden lg:block py-2">Import</button>
+                    <ul class="absolute hidden bg-white border rounded-md shadow-md">
+                        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 1</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 2</a></li>
+                        <!-- Add more options as needed -->
+                    </ul>
+                </div>
+                <!-- Export Dropdown -->
+                <div class="relative">
+                    <button class="bg-yellow-500  text-white px-2 py-2 hidden lg:block ">Export</button>
+                    <ul class="absolute hidden bg-white border rounded-md shadow-md">
+                        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 1</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 2</a></li>
+                        <!-- Add more options as needed -->
+                    </ul>
+                </div>
+            </div>
+        </h2>
+        <!-- Search Bar -->
+        <div class="mb-4">
+            <input type="text" placeholder="Search..." class=" border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:border-blue-500">
+        </div>
+
+
+        <div class="overflow-x-auto mb-8">
+            <table class="w-full bg-white rounded-lg shadow-md">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="border px-4 py-2">Fees Group</th>
+                        <th class="border px-4 py-2">Fees Code</th>
+                        <th class="border px-4 py-2">Due Date</th>
+                        <th class="border px-4 py-2">Status</th>
+                        <th class="border px-4 py-2">Amount</th>
+                        <th class="border px-4 py-2">Payment Mode</th>
+                        <th class="border px-4 py-2">Date</th>
+                        <th class="border px-4 py-2">Discount</th>
+                        <th class="border px-4 py-2">Fine</th>
+                        <th class="border px-4 py-2">Paid</th>
+                        <th class="border px-4 py-2">Balance</th>
+                        <th class="border px-4 py-2">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border px-4 py-2">Tuition Fee</td>
+                        <td class="border px-4 py-2">TF001</td>
+                        <td class="border px-4 py-2">April 30, 2024</td>
+                        <td class="border px-4 py-2">Paid</td>
+                        <td class="border px-4 py-2">$500</td>
+                        <td class="border px-4 py-2">Online</td>
+                        <td class="border px-4 py-2">April 15, 2024</td>
+                        <td class="border px-4 py-2">$0</td>
+                        <td class="border px-4 py-2">$0</td>
+                        <td class="border px-4 py-2">$500</td>
+                        <td class="border px-4 py-2">$0</td>
+                        <td class="border px-4 py-2"><button class="bg-blue-500 text-white px-2 py-1 rounded">Edit</button></td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Library Fee</td>
+                        <td class="border px-4 py-2">LF001</td>
+                        <td class="border px-4 py-2">April 30, 2024</td>
+                        <td class="border px-4 py-2">Unpaid</td>
+                        <td class="border px-4 py-2">$50</td>
+                        <td class="border px-4 py-2">-</td>
+                        <td class="border px-4 py-2">-</td>
+                        <td class="border px-4 py-2">$0</td>
+                        <td class="border px-4 py-2">$0</td>
+                        <td class="border px-4 py-2">$0</td>
+                        <td class="border px-4 py-2">$50</td>
+                        <td class="border px-4 py-2"><button class="bg-blue-500 text-white px-2 py-1 rounded">Pay</button></td>
+                    </tr>
+                    <!-- More rows can be added here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+   
+    <footer class="bg-gray-800 mt-10 text-white py-4">
+        <div class="container mx-auto text-center">
+          <p>&copy; 2024 clone by Anmol khede . All rights reserved.</p>
+        </div>
+      </footer>
+    <script>
+        // Toggle dropdown when avatar is clicked
+        document.getElementById('avatar').addEventListener('change', function() {
+          var dropdown = document.getElementById('dropdown');
+          dropdown.classList.toggle('hidden');
+        });
+      </script>
+         <script>
+            // Toggle dropdown when avatar is clicked
+            document.getElementById('avatar').addEventListener('change', function() {
+              var dropdown = document.getElementById('drop');
+              dropdown.classList.toggle('hidden');
+            });
+          </script>
+</body>
+
+</html>
